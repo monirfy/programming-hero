@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>30_5-1 Five JavaScript Fundamentals that you need to know</title>
+    <title>30_5-4 JS shortcut Ternary default parameter and or</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
@@ -67,12 +67,12 @@
                           <a class="nav-link" href="module-30.5-javascript-you-need-to-know-for-react.html">Module Introduction</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="30_5-1-five-javascript-fundamentals-that-you-need-to-know.html"
+                          <a class="nav-link" href="30_5-1-five-javascript-fundamentals-that-you-need-to-know.html"
                             >30_5-1 Five JavaScript Fundamentals that you need to know</a
                           >
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="30_5-4-js-shortcut-ternary-default-parameter-and-or.html"
+                          <a class="nav-link active" aria-current="page" href="30_5-4-js-shortcut-ternary-default-parameter-and-or.html"
                             >30_5-4 JS shortcut Ternary default parameter and or</a
                           >
                         </li>
@@ -93,34 +93,64 @@
           <!-- Module Body -->
           <div class="col-lg-9">
             <div class="card mb-3">
-              <div class="card-header">30_5-1 Five JavaScript Fundamentals that you need to know</div>
+              <div class="card-header">30_5-4 JS shortcut Ternary default parameter and or</div>
               <div class="card-body">
-                <p id="one" class="lead"></p>
                 <pre>
   <code>
+    const money = 15;
+    const active = false;
 
-  // 01 Variable: let, const template string
-  let money = 20;
-  money: 12;
-  const name = 'Kudus';
-  
-  const person = {
-    name: 'kudus',
-    age: 55,
-    city: 'Dhaka',
-  };
-  const statement = `This man ${name} with age ${person.age} live in ${person.city} his salary is ${money}`;
+    let food;
 
-  console.log(statement);
+    if (money > 100) {
+      food = 'biryani';
+    } else {
+      food = 'alur varta';
+    }
 
-  // 02 If, else condition
+    // ternary:
+    // condition ? true value : false value
 
-  // 03 array
+    let food2 = money > 100 ? 'biryani' : 'alur varta';
+    let cssClass;
+    if (active === true) {
+      cssClass = 'active';
+    } else {
+      cssClass = 'inactive';
+    }
 
-  // 04 for loop
+    const cssClass2 = active ? 'active' : 'inactive';
+    // function call shortcut alternative
+    //active ? displayUser() : hideUser();
 
-  // 05 function + arrow function
+    //
+    // active && displayUser();
+    // active || displayUser();
+    // True hoile jaba
+    const x = active && 5;
+    // False hoile janbe na
+    const y = active || 5;
+    console.log(y);
 
+    // string to number
+    const number = +'45';
+    console.log(number);
+
+    // Number to string
+    const numText = 45 + '';
+    console.log(numText);
+
+    // Default parameter
+    function add(num1, num2 = 5) {
+      //num2 = num2 || 5;
+      return num1 + num2;
+    }
+
+    const ddd = add(45, 25);
+    console.log(ddd);
+
+    // End video code
+    
   </code>
                 </pre>
               </div>
@@ -145,31 +175,57 @@
     ></script>
     <script src="assets/app.js"></script>
     <script>
-      ////////////
-      // Module 30.5 -  JS Code
-      /////////////
+      const money = 15;
+      const active = false;
 
-      // 01 Variable: let, const template string
-      let money = 20;
-      money: 12;
-      const name = 'Kudus';
-      let isConfident = true;
-      const person = {
-        name: 'kudus',
-        age: 55,
-        city: 'Dhaka',
-      };
-      const statement = `This man ${name} with age ${person.age} live in ${person.city} his salary is ${money}`;
+      let food;
 
-      console.log(statement);
+      if (money > 100) {
+        food = 'biryani';
+      } else {
+        food = 'alur varta';
+      }
 
-      // 02 If, else condition
+      // ternary:
+      // condition ? true value : false value
 
-      // 03 array
+      let food2 = money > 100 ? 'biryani' : 'alur varta';
+      let cssClass;
+      if (active === true) {
+        cssClass = 'active';
+      } else {
+        cssClass = 'inactive';
+      }
 
-      // 04 for loop
+      const cssClass2 = active ? 'active' : 'inactive';
+      // function call shortcut alternative
+      //active ? displayUser() : hideUser();
 
-      // 05 function + arrow function
+      //
+      // active && displayUser();
+      // active || displayUser();
+      // True hoile jaba
+      const x = active && 5;
+      // False hoile janbe na
+      const y = active || 5;
+      console.log(y);
+
+      // string to number
+      const number = +'45';
+      console.log(number);
+
+      // Number to string
+      const numText = 45 + '';
+      console.log(numText);
+
+      // Default parameter
+      function add(num1, num2 = 5) {
+        //num2 = num2 || 5;
+        return num1 + num2;
+      }
+
+      const ddd = add(45, 25);
+      console.log(ddd);
     </script>
   </body>
 </html>
